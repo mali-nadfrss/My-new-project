@@ -19,7 +19,8 @@ public class PrintBoundaries {
         if (n == null){
             return;
         }
-        System.out.println(n.data);
+        if (n.right != null || n.left != null){
+        System.out.println(n.data);}
         printLeftNodes(n.left);
     }
 
@@ -28,7 +29,8 @@ public class PrintBoundaries {
             return;
         }
         printReverseRightNodes(n.right);
-        System.out.println(n.data);
+        if (n.right != null || n.left != null){
+        System.out.println(n.data);}
     }
 
     public static void main(String args[]) throws Exception {
@@ -41,7 +43,7 @@ public class PrintBoundaries {
         n.left.right.left = new Node(10);
         n.left.right.right = new Node(14);
         printReverseRightNodes(n);
-        printLeftNodes(n);
+        printLeftNodes(n.left);
         printLeafs(n);
     }
 }
