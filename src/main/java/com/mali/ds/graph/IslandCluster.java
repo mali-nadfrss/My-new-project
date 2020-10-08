@@ -1,4 +1,4 @@
-package com.mali.ds;
+package com.mali.ds.graph;
 
 import java.util.Iterator;
 

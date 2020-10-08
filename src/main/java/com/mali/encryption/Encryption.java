@@ -60,6 +60,6 @@ public class Encryption {
 
         scanner.close();*/
 
-        System.out.println(encryption("I Love Sam"));
+        System.out.println(encryption("I Love Sam 143"));
     }
 }

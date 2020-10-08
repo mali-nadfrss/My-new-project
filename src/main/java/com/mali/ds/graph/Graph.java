@@ -1,4 +1,4 @@
-package com.mali.ds;
+package com.mali.ds.graph;
 
 import java.util.LinkedList;
 
@@ -16,9 +16,9 @@ public class Graph {
   }
 
   public void add(int vertex, int d) throws Exception {
-    if(vertex >= vertices){
+    /*if(vertex >= vertices){
       throw new Exception("vertex not allowed");
-    }
+    }*/
     arr[vertex].add(d);
   }
 

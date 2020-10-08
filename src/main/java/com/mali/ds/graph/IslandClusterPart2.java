@@ -1,4 +1,4 @@
-package com.mali.ds;
+package com.mali.ds.graph;
 
 public class IslandClusterPart2 {
 
