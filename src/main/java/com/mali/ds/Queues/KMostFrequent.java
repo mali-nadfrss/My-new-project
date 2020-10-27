@@ -32,19 +32,23 @@ public class KMostFrequent {
         int count = 0;
         for (int i = freq.size()-1 ; i >= 0 ; i--){
             if (freq.get(i).size() > 0){
-                count = count + freq.get(i).size() ;
-                freq.get(i).stream().forEach(j -> System.out.println(j));
+                for (int j:
+                        freq.get(i)) {
+                    System.out.println(j);
+                    count = count+1;
+                    if (count >=k){
+                        return;
+                    }
+                }
             }
-            if (count == k){
-                return;
-            }
+
         }
     }
 
 
     public static void main(String args[]) {
 
-        int[] arr = {1, 2, 3, 4, 4, 5, 5};
+        int[] arr = {1, 2, 3, 5, 4, 4, 5};
         logic(arr, 3);
     }
 }
