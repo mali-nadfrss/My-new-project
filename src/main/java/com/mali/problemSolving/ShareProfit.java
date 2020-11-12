@@ -1,6 +1,9 @@
 package com.mali.problemSolving;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 //https://www.geeksforgeeks.org/maximum-profit-by-buying-and-selling-a-share-at-most-twice/?ref=lbp
 public class ShareProfit {
 
