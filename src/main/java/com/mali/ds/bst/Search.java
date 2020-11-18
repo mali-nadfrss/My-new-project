@@ -1,7 +1,5 @@
 package com.mali.ds.bst;
 
-import com.mali.ds.bt.Node;
-
 public class Search {
 
     static Node find(Node root, int key){

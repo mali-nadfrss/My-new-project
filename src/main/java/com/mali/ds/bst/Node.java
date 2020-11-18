@@ -1,8 +1,8 @@
-package com.mali.ds.bt;
+package com.mali.ds.bst;
 
 public class Node {
 
-    public final int data;
+    public int data;
     public Node left;
     public Node right;
 
