@@ -1,5 +1,7 @@
 package com.mali.ds.bt;
 
+import com.mali.ds.bst.Node;
+
 public class MaxEvenSumInBST {
 
     static int maxSum(Node n, int ans){
