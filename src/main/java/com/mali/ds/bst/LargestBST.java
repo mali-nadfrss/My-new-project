@@ -3,44 +3,44 @@ package com.mali.ds.bst;
 /* https://practice.geeksforgeeks.org/problems/largest-bst/1 */
 public class LargestBST {
 
-    static class isBst {
-        isBst left;
-        isBst right;
+    static class NewBST {
         int size;
-        boolean bst;
+        boolean isBst;
         int min;
         int max;
         int data;
     }
 
-    static isBst construct(Node root) {
-        isBst bst = new isBst();
+    static NewBST construct(Node root) {
         if (root == null) {
-            bst.size = 0;
-            bst.min = Integer.MAX_VALUE;
-            bst.max = Integer.MIN_VALUE;
-            bst.bst= false;
-            return bst;
-        }  else {
-            bst.left = construct(root.left);
-            bst.right = construct(root.right);
-            if (bst.data > bst.left.data && bst.left.bst && bst.right.bst && bst.data < bst.right.data) {
-                bst.bst = true;
-                bst.max = Math.max(bst.right.max, bst.max);
-                bst.min = Math.min(bst.left.min, bst.min);
-                bst.size = 1 + bst.left.size + bst.right.size;
+            NewBST newBST = new NewBST();
+            newBST.size = 0;
+            newBST.min = Integer.MAX_VALUE;
+            newBST.max = Integer.MIN_VALUE;
+            newBST.isBst = true;
+            return newBST;
+        } else {
+            NewBST left = construct(root.left);
+            NewBST right = construct(root.right);
+            NewBST bst = new NewBST();
+            bst.data = root.data;
+            if (bst.data > left.max && bst.data < right.min && left.isBst && right.isBst) {
+                bst.isBst = true;
+                bst.min = Math.min(bst.data, left.min);
+                bst.max = Math.max(bst.data, right.max);
+                bst.size = 1 + left.size + right.size;
             } else {
-                bst.size = Math.max(bst.right.size, bst.left.size);
-                bst.min = bst.max = bst.data;
-
+                bst.size = Math.max(left.size, right.size);
+                bst.isBst = false;
             }
+            return bst;
         }
-        return bst;
+
     }
 
 
     static int largestBst(Node root) {
-        isBst bst = construct(root);
+        NewBST bst = construct(root);
         return bst.size;
     }
 
