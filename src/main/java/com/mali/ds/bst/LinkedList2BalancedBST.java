@@ -1,8 +1,5 @@
 package com.mali.ds.bst;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
-
 /* https://www.geeksforgeeks.org/sorted-linked-list-to-balanced-bst/?ref=leftbar-rightbar */
 public class LinkedList2BalancedBST {
 
@@ -45,6 +42,7 @@ public class LinkedList2BalancedBST {
         root.right = sol(n - n / 2 - 1);
         return root;
     }
+
     static LNode head;
 
     public static void main(String[] args) {
