@@ -3,22 +3,19 @@ package com.mali.ds.searchNsort;
 public class SortAnArrayOf012 {
 
     static void sortArray(int[] arr){
-        int i = -1;
+        int i = 0;
         int k = arr.length-1;
-        for (int j = 0; j <= k; ) {
+        for (int j = 0; j <=k; ) {
             if (arr[j] == 0){
-                i++;
                 swap(arr, i, j);
                 j++;
+                i++;
             }
-            if (arr[j] == 2){
-                if(arr[k] == 2){
-                    k--;
-                }
+            else if (arr[j] == 2){
                 swap(arr, j , k);
                 k--;
             }
-            if (arr[j] == 1){
+            else if (arr[j] == 1){
                 j++;
             }
         }
