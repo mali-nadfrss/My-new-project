@@ -1,6 +1,6 @@
 package com.mali.ds.bitManipulation;
 
-public class CountSetBits1ToN {
+public class    CountSetBits1ToN {
 
     /*
     * https://www.geeksforgeeks.org/count-total-set-bits-in-all-numbers-from-1-to-n/
@@ -23,6 +23,6 @@ public class CountSetBits1ToN {
         return y*x + (n-y*2+1)+solve(n-y*2);
     }
     public static void main(String[] args)  {
-        System.out.println(solve(7));
+        System.out.println(solve(4));
     }
 }

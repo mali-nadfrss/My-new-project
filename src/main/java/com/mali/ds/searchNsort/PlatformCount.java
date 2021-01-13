@@ -26,7 +26,7 @@ public class PlatformCount {
 
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         int[] arr = {900, 940, 950, 1100, 1500, 1800};
         int[] brr = {910, 1200, 1120, 1130, 1900, 2000};
         System.out.println(findPlatform(arr, brr, 6));
