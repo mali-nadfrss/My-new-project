@@ -20,8 +20,10 @@ public class MaxDistance {
                 map.put(arr[i], i);
             }
         }
+
         return ans;
     }
+
     public static void main(String[] args) {
         int[] arr = {3, 2, 1, 2, 1, 4, 5, 8, 6, 7, 4, 2};
         System.out.println(maxDistance(arr, 12));
