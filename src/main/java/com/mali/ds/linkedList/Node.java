@@ -2,7 +2,7 @@ package com.mali.ds.linkedList;
 
 public class Node {
     int data;
-    Node next;
+    Node next, prev;
 
     Node() {
     }

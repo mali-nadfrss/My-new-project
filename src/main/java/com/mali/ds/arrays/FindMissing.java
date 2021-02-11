@@ -4,8 +4,6 @@ package com.mali.ds.arrays;
 public class FindMissing {
 
     static int findMissing(int arr[], int size) {
-
-
         for (int i = 1; i < size; ) {
             if (arr[i] > 0 && arr[i] <= size && arr[i] != arr[arr[i] - 1]) {
                 int temp = arr[arr[i]-1];
