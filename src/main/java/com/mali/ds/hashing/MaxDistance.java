@@ -1,5 +1,6 @@
 package com.mali.ds.hashing;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,7 +9,7 @@ import java.util.Map;
  *  */
 public class MaxDistance {
 
-    static int maxDistance(int arr[], int n) {
+    public int maxDistance(int arr[], int n) throws IOException {
         // Your code here
         int ans = 0;
         Map<Integer, Integer> map = new HashMap<>();
@@ -26,6 +27,6 @@ public class MaxDistance {
 
     public static void main(String[] args) {
         int[] arr = {3, 2, 1, 2, 1, 4, 5, 8, 6, 7, 4, 2};
-        System.out.println(maxDistance(arr, 12));
+       // System.out.println(maxDistance(arr, 12));
     }
 }
