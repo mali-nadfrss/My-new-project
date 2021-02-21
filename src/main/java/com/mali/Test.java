@@ -9,7 +9,7 @@ public class Test extends Max{
             x = x >>> 31;
             System.out.println(x);*//*
 
-            *//*String __$1____str="These Variables!";
+ *//*String __$1____str="These Variables!";
             String $s=__$1___str;
             int a=31,b=a++;
             int @q=12;
@@ -17,7 +17,7 @@ public class Test extends Max{
                 System.out.println("True");
             else
                 System.out.println("False");*//*
-            *//*int A1[] = {1, 2, 3};
+ *//*int A1[] = {1, 2, 3};
             int A2[] = {1, 2, 3};
             if (A1.equals(A2))
                 System.out.println("Same");
@@ -61,73 +61,80 @@ public class Test extends Max{
         }
     }
 
+        99
+  13       18
+8    56
+   12
+
 }*/
 
-import com.mali.ds.hashing.MaxDistance;
+class Node {
+    int data;
+    Node left;
+    Node right;
 
-import java.util.ArrayList;
-import java.util.List;
-
-class Test extends MaxDistance
-{
-
-    public int maxDistance(int arr[], int n)  {
-        return 1;
+    Node(int data) {
+        this.data = data;
     }
+}
+
+class Test {
+
+    public static void main(String[] args) {
+        //int[] arr = {4, 5, 6, 8};
+        // System.out.print(subArraySum(arr, 7));
+        Node root = new Node(99);
+        root.right = new Node(108);
+        root.left = new Node(13);
+        root.left.right = new Node(7);
+        root.left.left = new Node(8);
+        System.out.print(isBST(root));
+    }
+
+    static boolean isBST(Node root) {
+        return checkBST(root, Integer.MAX_VALUE, Integer.MIN_VALUE);
+    }
+
     /*
+            99
+   13
+        78
+8    56
+        64
+99,78,56
+    * */
+    static boolean checkBST(Node root, int max, int min) {
+        if (root == null) {
+            return true;
+        }
+        if (root.data > max || root.data < min) {
+            return false;
+        }
+        boolean left = checkBST(root.left, root.data, min);
+        boolean right = checkBST(root.right, max, root.data);
+        return left && right;
+    }
 
 
-    final StringBuffer str1 = new StringBuffer();
-    final StringBuffer str2 = new StringBuffer();
-
-    public static void main(String args[])
-    {
-        final Test obj = new Test();
-
-        new Thread()
-        {
-            public void run()
-            {
-                synchronized(this)
-                {
-                    obj.str1.append("1");
-                    obj.str2.append("A");
-                    System.out.println(obj.str1);
-                    System.out.println(obj.str2);
+    /* 1, 2, 3 target 2 */
+    static boolean subArraySum(int[] arr, int target) {
+        int start = 0;
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (sum == target) {
+                return true;
+            }
+            sum = sum + arr[i];
+            if (sum > target) {
+                while (sum > target && start < i) {
+                    sum = sum - arr[start];
+                    start++;
                 }
             }
-        }.start();
+        }
+        return sum == target;
 
-        new Thread()
-        {
-            public void run()
-            {
-                synchronized(this)
-                {
-                    obj.str1.append("2");
-                    obj.str2.append("B");
-                    System.out.println(obj.str2);
-                    System.out.println(obj.str1);
-                }
-            }
-        }.start();
-    }*/
+    }
 
-    public static void Order(String s)
-    {
-        System.out.println("String");
-    }
-    public static void Order(Object o)
-    {
-        System.out.println("Object");
-    }
-    public static void main (String [] args)
-    {
-
-        List<String> l = new ArrayList<>();
-        l.stream().map((va)-> {
-            return 1;
-        }).count();
-    }
 
 }

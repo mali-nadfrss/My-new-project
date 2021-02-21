@@ -15,6 +15,10 @@ public class MinStack {
         return s.size();
     }
 
+    boolean isEmpty(){
+        return s.isEmpty();
+    }
+
     int peek() {
         int i = s.peek();
         if (i < minEle) {

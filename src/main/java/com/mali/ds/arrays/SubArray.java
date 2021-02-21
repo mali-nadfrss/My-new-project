@@ -1,6 +1,7 @@
 package com.mali.ds.arrays;
 
 import java.util.ArrayList;
+
 /* easy 2*/
 public class SubArray {
     static ArrayList<Integer> subArraySum(int n, int s, int[] m) {

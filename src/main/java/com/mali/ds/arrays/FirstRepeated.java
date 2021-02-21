@@ -3,8 +3,9 @@ package com.mali.ds.arrays;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+
 /* very easy
-* */
+ * */
 public class FirstRepeated {
 
     public static int firstRepeated(int[] arr, int n) {
