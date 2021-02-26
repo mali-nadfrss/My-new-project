@@ -1,4 +1,4 @@
-package com.mali.ds.bst;
+package com.mali.ds.trees.bst;
 
 
 // Java program to demonstrate

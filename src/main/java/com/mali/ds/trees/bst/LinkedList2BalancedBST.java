@@ -1,4 +1,4 @@
-package com.mali.ds.bst;
+package com.mali.ds.trees.bst;
 
 /* https://www.geeksforgeeks.org/sorted-linked-list-to-balanced-bst/?ref=leftbar-rightbar */
 public class LinkedList2BalancedBST {

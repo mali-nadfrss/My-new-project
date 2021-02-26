@@ -1,6 +1,6 @@
-package com.mali.ds.bt;
+package com.mali.ds.trees.bt;
 
-import com.mali.ds.bst.Node;
+import com.mali.ds.trees.bst.Node;
 
 public class PrintBoundaries {
 

@@ -1,4 +1,4 @@
-package com.mali.ds.bst;
+package com.mali.ds.trees.bst;
 
 /* https://leetcode.com/problems/flatten-binary-tree-to-linked-list/discuss/951220/Java-Recursive-Solution */
 public class FlattenBST {

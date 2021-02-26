@@ -1,4 +1,4 @@
-package com.mali.ds.bst;
+package com.mali.ds.trees.bst;
 
 /* https://leetcode.com/problems/delete-node-in-a-bst/ */
 public class DeleteANode {

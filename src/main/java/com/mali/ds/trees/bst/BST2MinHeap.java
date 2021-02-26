@@ -1,4 +1,4 @@
-package com.mali.ds.bst;
+package com.mali.ds.trees.bst;
 
 import java.util.Iterator;
 import java.util.LinkedList;

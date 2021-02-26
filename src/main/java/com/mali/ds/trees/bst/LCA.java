@@ -1,4 +1,4 @@
-package com.mali.ds.bst;
+package com.mali.ds.trees.bst;
 
 /* https://practice.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-bst/1# */
 public class LCA {
