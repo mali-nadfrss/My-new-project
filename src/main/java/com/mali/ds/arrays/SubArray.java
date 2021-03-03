@@ -2,19 +2,18 @@ package com.mali.ds.arrays;
 
 import java.util.ArrayList;
 
+/* easy 2*/
 public class SubArray {
     static ArrayList<Integer> subArraySum(int n, int s, int[] m) {
 
         // Your code here
-
-
         int sum = m[0];
         int low = 1;
-        int high = 1;
-        if (sum == s){
+        int high;
+        if (sum == s) {
             ArrayList<Integer> ans = new ArrayList<>();
             ans.add(0, 1);
-            ans.add(1,1);
+            ans.add(1, 1);
         }
         for (int i = 1; i < n; ) {
             if (sum + m[i] == s) {
@@ -24,7 +23,6 @@ public class SubArray {
                 ans.add(1, high);
                 return ans;
             } else if (sum + m[i] < s) {
-                high = i + 1;
                 sum = sum + m[i];
                 i++;
             } else {
@@ -41,7 +39,6 @@ public class SubArray {
 
     public static void main(String[] args) {
 
-
-        System.out.println(subArraySum(5, 12, new int[]{1,2,3,7,5}));
+        System.out.println(subArraySum(5, 12, new int[]{1, 2, 3, 7, 5}));
     }
 }

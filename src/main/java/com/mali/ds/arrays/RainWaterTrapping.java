@@ -11,19 +11,19 @@ public class RainWaterTrapping {
         // Your code here
         int l = arr.length;
         int lmax = arr[0];
-        int ans = 0 ;
+        int ans = 0;
         for (int i = 1; i < l; i++) {
-            if (arr[i] > lmax){
+            if (arr[i] > lmax) {
                 lmax = arr[i];
             }
             ans = ans + (lmax - arr[i]);
         }
-        int rmax = arr[l-1];
-        for (int i = l-1; i > 0; i--) {
-            if (arr[i] == lmax){
+        int rmax = arr[l - 1];
+        for (int i = l - 1; i > 0; i--) {
+            if (arr[i] == lmax) {
                 break;
             }
-            if (arr[i] > rmax){
+            if (arr[i] > rmax) {
                 rmax = arr[i];
             }
             ans = ans - (lmax - rmax);
