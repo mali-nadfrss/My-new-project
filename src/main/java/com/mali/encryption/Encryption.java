@@ -16,8 +16,6 @@ public class Encryption {
         s = s.replaceAll(" ", "");
         int len = s.length();
         int row = (int)Math.sqrt(len) ;
-        int col = 0;
-        col = row;
         if((row * row) < len){
             row = row +1;
         }

@@ -4,7 +4,7 @@ import java.nio.file.AccessDeniedException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProxyConnection implements InternetConnection {
+public class ProxyConnection<Node> implements InternetConnection {
 
     static List<String> sites = new ArrayList<>();
     private static InternetConnection internetConnection;

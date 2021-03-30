@@ -2,7 +2,7 @@ package com.mali.ds.graph;
 
 import java.util.LinkedList;
 
-public class Graph {
+public class Graph<V> {
 
   private int vertices;
   private LinkedList<Integer>[] arr;
@@ -15,10 +15,7 @@ public class Graph {
     }
   }
 
-  public void add(int vertex, int d) throws Exception {
-    /*if(vertex >= vertices){
-      throw new Exception("vertex not allowed");
-    }*/
+  public void add(int vertex, int d) {
     arr[vertex].add(d);
   }
 
@@ -26,7 +23,7 @@ public class Graph {
     return vertices;
   }
 
-  public LinkedList getArr(int i ) {
+  public LinkedList getArr(int i) {
     return arr[i];
   }
 }
