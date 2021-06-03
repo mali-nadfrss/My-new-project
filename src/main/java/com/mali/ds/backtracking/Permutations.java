@@ -22,7 +22,7 @@ public class Permutations {
     }
 
     for (int i = start; i < nums.length; i++) {
-      if (i>start && nums[i] == nums[start]) {
+      if (i > start && nums[i] == nums[start]) {
         continue;
       }
       swap(nums, start, i);

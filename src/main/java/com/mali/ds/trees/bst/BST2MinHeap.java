@@ -7,15 +7,15 @@ import java.util.List;
 public class BST2MinHeap {
 
     static Node convert(Node n){
-        List list = new LinkedList();
+        List<Integer> list = new LinkedList<>();
         inOrder(n, list);
-        Iterator iterator = list.iterator();
+        Iterator<Integer> iterator = list.iterator();
         preOrder(n,iterator);
         return n;
     }
 
 
-    static Node inOrder(Node n , List list){
+    static Node inOrder(Node n , List<Integer> list){
         if (n == null){
             return null;
         }
@@ -25,7 +25,7 @@ public class BST2MinHeap {
         return n;
     }
 
-    static Node preOrder(Node n , Iterator iterator){
+    static Node preOrder(Node n , Iterator<Integer> iterator){
         if (n == null){
             return null;
         }
@@ -37,13 +37,6 @@ public class BST2MinHeap {
 
     public static void main(String[] args) {
         BinarySearchTree tree = new BinarySearchTree();
-
-        /* Let us create following BST
-              50
-           /     \
-          30      70
-         /  \    /  \
-        20   40  60   80 */
         tree.insert(4);
         tree.insert(2);
         tree.insert(6);
