@@ -3,7 +3,26 @@ package com.mali.ds.greedy;
 public class JumpGame {
 
   public static int minJumps(int[] nums) {
-return 0;
+
+    int len = nums.length;
+    int[] memory = new int[nums.length];
+    memory[len - 1] = 0;
+    for (int i = len - 1; i >= 0; i--) {
+      memory[i] = calJumps(nums[i], memory, i);
+    }
+    return memory[0];
+  }
+
+  static int calJumps(int jumps, int[] memory, int i) {
+    int min = Integer.MAX_VALUE;
+    for (int j = 1; j <= jumps && (j + i) < memory.length; j++) {
+      int temp = 1 + memory[i + j];
+      if (min > temp) {
+        min = temp;
+      }
+    }
+
+    return min;
   }
 
   public static boolean canJump(int[] nums) {
