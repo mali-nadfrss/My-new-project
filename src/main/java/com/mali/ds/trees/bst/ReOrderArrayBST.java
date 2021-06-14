@@ -1,5 +1,8 @@
 package com.mali.ds.trees.bst;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
 https://leetcode.com/problems/number-of-ways-to-reorder-array-to-get-same-bst/
 Hard
@@ -12,28 +15,33 @@ public class ReOrderArrayBST {
     for (int i = 0; i < nums.length; i++) {
       tree.insert(nums[i]);
     }
-    return recursion(tree.root, getTriangle(nums.length + 1)) - 1;
+    return recursion(tree.root, getTriangle(nums.length + 1), new HashMap<>()) - 1;
   }
 
-  static int recursion(Node root, long[][] combs) {
+  static int recursion(Node root, long[][] combs, Map<Node, Integer> map) {
     if (root == null) {
       return 1;
     }
-    int left = count(root.left);
-    int right = count(root.right);
+    int left = count(root.left, map);
+    int right = count(root.right, map);
 
     return (int)
-        ((combs[left + right][left] % MOD * recursion(root.left, combs) % MOD)
+        ((combs[left + right][left] % MOD * recursion(root.left, combs, map) % MOD)
             % MOD
-            * recursion(root.right, combs)
+            * recursion(root.right, combs, map)
             % MOD);
   }
 
-  static int count(Node root) {
+  static int count(Node root, Map<Node, Integer> map) {
     if (root == null) {
       return 0;
     }
-    return 1 + count(root.right) + count(root.left);
+    if (map.containsKey(root)) {
+      return map.get(root);
+    }
+    int c = 1 + count(root.right, map) + count(root.left, map);
+    map.put(root, c);
+    return c;
   }
 
   private static long[][] getTriangle(int n) {
