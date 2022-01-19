@@ -17,9 +17,18 @@ public class KadanesAlgo {
         return ans;
     }
 
+    static int kadanesVer2(int[] arr){
+        int ans = 0;
+        int cur = 0;
+    for (int i = 1; i < arr.length; i++) {
+      cur = Integer.max(0, cur+arr[i] - arr[i-1]);
+      ans = Integer.max(ans, cur);
+    }
+        return ans;
+    }
+
     public static void main(String[] args) {
-
-
         System.out.println(maxSubArraySum(new int[]{1, 2, 3, -2, 5}, 5));
+        System.out.println(kadanesVer2(new int[]{7,1,6,99,4,8}));
     }
 }

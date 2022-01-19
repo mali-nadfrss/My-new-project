@@ -32,6 +32,7 @@ public class SortAnArrayOf012 {
         sortArray(arr);
         for (int i : arr) {
             System.out.println(i);
+            System.out.println(1 << i);
         }
     }
 }
