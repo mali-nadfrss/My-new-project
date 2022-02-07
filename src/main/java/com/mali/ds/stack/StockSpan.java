@@ -9,7 +9,7 @@ public class StockSpan {
 
     static int[] calculateSpan(int price[], int n, int S[]) {
 
-        Stack<Integer> s = new Stack<>();
+        Stack<Integer> s = new Stack<Integer>();
         int[] ans = new int[n];
         ans[0] = 1;
         s.push(0);
