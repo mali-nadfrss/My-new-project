@@ -16,7 +16,6 @@ public class OutOfBoundaryPaths {
     if (dp[startRow][startColumn][maxMove] > 0) return dp[startRow][startColumn][maxMove];
     final int MOD = 1000000007;
     int temp = recursion(m, n, maxMove - 1, startRow + 1, startColumn, dp) % MOD;
-
     temp = (temp + recursion(m, n, maxMove - 1, startRow - 1, startColumn, dp)) % MOD;
     temp = (temp + recursion(m, n, maxMove - 1, startRow, startColumn + 1, dp)) % MOD;
     temp = (temp + recursion(m, n, maxMove - 1, startRow, startColumn - 1, dp)) % MOD;
