@@ -1,4 +1,4 @@
-package com.mali.ds.dp;
+package com.mali.ds.dp.stringsDp;
 
 /* https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/ */
 public class MinimumASCIIDeleteSum {

@@ -1,4 +1,4 @@
-package com.mali.ds.dp;
+package com.mali.ds.dp.max_min;
 
 import java.util.PriorityQueue;
 import java.util.Queue;

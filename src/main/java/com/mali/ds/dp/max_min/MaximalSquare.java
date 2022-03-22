@@ -1,4 +1,4 @@
-package com.mali.ds.dp;
+package com.mali.ds.dp.max_min;
 
 /*
 https://leetcode.com/problems/maximal-square/

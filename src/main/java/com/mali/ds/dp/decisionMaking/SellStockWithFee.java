@@ -1,11 +1,13 @@
-package com.mali.ds.dp;
+package com.mali.ds.dp.decisionMaking;
 
 /*
 medium
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/
+all variants
 */
 public class SellStockWithFee {
 
+  /* https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/ */
   public static int maxProfit(int[] prices, int fee) {
     return recursion(prices, 0, false, fee, new int[prices.length][2]);
   }
@@ -18,25 +20,26 @@ public class SellStockWithFee {
   }
 
   /*
-   * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+   * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii && iv/
    * */
   public static int maxProfitWithLimit(int[] prices, int maxLimit) {
-    return recursionWithLimit(prices, 0, false, new Integer[prices.length][2][maxLimit], 0, maxLimit);
+    return recursionWithLimit(
+        prices, 0, false, new Integer[prices.length][2][maxLimit + 1], 0, maxLimit);
   }
 
-  static int recursionWithLimit(
+  private static int recursionWithLimit(
       int[] prices, int day, boolean own, Integer[][][] dp, int currentLimit, int maxLimit) {
     if (day == prices.length || currentLimit > maxLimit) return 0;
+    int p2 = recursionWithLimit(prices, day + 1, false, dp, currentLimit, maxLimit);
     if (own) {
       if (dp[day][1][currentLimit] != null) return dp[day][1][currentLimit];
       int p1 = prices[day] + recursionWithLimit(prices, day + 1, false, dp, currentLimit, maxLimit);
-      int p2 = recursionWithLimit(prices, day + 1, true, dp, currentLimit, maxLimit);
       dp[day][1][currentLimit] = Integer.max(p1, p2);
       return dp[day][1][currentLimit];
     } else {
       if (dp[day][0][currentLimit] != null) return dp[day][0][currentLimit];
-      int p1 = -prices[day] + recursionWithLimit(prices, day + 1, true, dp, currentLimit + 1, maxLimit);
-      int p2 = recursionWithLimit(prices, day + 1, false, dp, currentLimit, maxLimit);
+      int p1 =
+          -prices[day] + recursionWithLimit(prices, day + 1, true, dp, currentLimit + 1, maxLimit);
       dp[day][0][currentLimit] = Integer.max(p1, p2);
       return dp[day][0][currentLimit];
     }
@@ -69,14 +72,12 @@ public class SellStockWithFee {
     if (own) {
       int p1 = prices[day] - fee + recursion(prices, day + 1, false, fee, dp);
       int p2 = recursion(prices, day + 1, true, fee, dp);
-      dp[day][1] = Integer.max(p1, p2);
+      return dp[day][1] = Integer.max(p1, p2);
     } else {
       int p1 = -prices[day] + recursion(prices, day + 1, true, fee, dp);
       int p2 = recursion(prices, day + 1, false, fee, dp);
-      dp[day][0] = Integer.max(p1, p2);
+      return dp[day][0] = Integer.max(p1, p2);
     }
-    if (own) return dp[day][1];
-    return dp[day][0];
   }
 
   public static void main(String[] args) {
@@ -85,9 +86,7 @@ public class SellStockWithFee {
     System.out.println(maxProfitWithCoolDown(new int[] {2, 1, 4})); // ans 2
     System.out.println(maxProfitWithLimit(new int[] {3, 3, 5, 0, 0, 3, 1, 4}, 2)); // ans 6
     int[] prices =
-        new int[] { 5717, 5716, 5715, 5714, 5713, 5712, 5711,
-          5710, 5709, 5708, 5707, 5706, 5705, 0
-        };
+        new int[] {5717, 5716, 5715, 5714, 5713, 5712, 5711, 5710, 5709, 5708, 5707, 5706, 5705, 0};
     System.out.println(maxProfitWithLimit(prices, 2)); // ans 19
   }
 }

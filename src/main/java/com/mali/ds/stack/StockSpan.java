@@ -7,19 +7,19 @@ import java.util.Stack;
  * */
 public class StockSpan {
 
-    static int[] calculateSpan(int price[], int n, int S[]) {
+  static int[] calculateSpan(int price[], int n, int S[]) {
 
-        Stack<Integer> s = new Stack<Integer>();
-        int[] ans = new int[n];
-        ans[0] = 1;
-        s.push(0);
-        for (int i = 1; i < n; i++) {
-            while (!s.isEmpty() && price[s.peek()] <= price[i]) {
-                s.pop();
-            }
-            ans[i] = s.isEmpty() ? i + 1 : i - s.peek();
-            s.push(i);
-        }
-        return ans;
+    Stack<Integer> s = new Stack<>();
+    int[] ans = new int[n];
+    ans[0] = 1;
+    s.push(0);
+    for (int i = 1; i < n; i++) {
+      while (!s.isEmpty() && price[s.peek()] <= price[i]) {
+        s.pop();
+      }
+      ans[i] = s.isEmpty() ? i + 1 : i - s.peek();
+      s.push(i);
     }
+    return ans;
+  }
 }

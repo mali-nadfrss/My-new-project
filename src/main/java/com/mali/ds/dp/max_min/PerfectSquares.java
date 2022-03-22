@@ -1,4 +1,4 @@
-package com.mali.ds.dp;
+package com.mali.ds.dp.max_min;
 
 import java.util.HashMap;
 import java.util.Map;
