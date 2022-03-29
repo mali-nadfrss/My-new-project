@@ -1,7 +1,7 @@
-package com.mali.ds.dp;
+package com.mali.ds.dp.greedy;
 
 /*
-https://leetcode.com/problems/gas-station/discuss/1197683/Lessons-learned
+https://leetcode.com/problems/gas-station/
 medium
  */
 public class GasStationCircle {
