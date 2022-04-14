@@ -6,8 +6,18 @@ import java.util.*;
 /* HackerRank Encryption problem
 https://www.hackerrank.com/challenges/encryption/problem
 An English text needs to be encrypted using the following encryption scheme.
-First, the spaces are removed from the text. Let  be the length of this text.
+First, the spaces are removed from the text. Let L be the length of this text.
 Then, characters are written into a grid, whose rows and columns have the following constraints:
+Example:
+if man was meant to stay on the ground god would given us roots
+After removing spaces, the string is 54 characters long. sq.root(54) is between 7 and 8 , so it is written in the form of a grid with 7 rows and 8 columns:
+ifmanwas
+meanttos
+tayonthe
+groundgo
+dwouldha
+vegivenu
+sroots
 */
 public class Encryption {
 

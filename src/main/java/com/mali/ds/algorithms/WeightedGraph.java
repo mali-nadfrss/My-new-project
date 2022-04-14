@@ -1,9 +1,9 @@
-package com.mali.ds.graph;
+package com.mali.ds.algorithms;
 
 public class WeightedGraph {
-  class Edge {
-    int src, dest;
-    double weight;
+  public class Edge {
+    public int src, dest;
+    public double weight;
 
     Edge() {
       src = dest = 0;
@@ -11,10 +11,10 @@ public class WeightedGraph {
     }
   }
 
-  int V, E;
-  Edge[] edge;
+  public int V, E;
+  public Edge[] edge;
 
-  WeightedGraph(int v, int e) {
+  public WeightedGraph(int v, int e) {
     V = v;
     E = e;
     edge = new Edge[e];

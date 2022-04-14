@@ -2,7 +2,6 @@ package com.mali.ds.algorithms;
 
 public class Knapsack {
 
-
   int bruteForce(int[] weights, int[] profits, int capacity, int index) {
     if (capacity <= 0 || index >= weights.length) {
       return 0;
@@ -33,7 +32,4 @@ public class Knapsack {
     dp[currentIndex][capacity] = Integer.max(profit1, profit2);
     return dp[currentIndex][capacity];
   }
-
-
-
 }

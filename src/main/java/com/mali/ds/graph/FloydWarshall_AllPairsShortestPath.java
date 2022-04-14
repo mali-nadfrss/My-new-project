@@ -6,7 +6,7 @@ algorithms
  */
 public class FloydWarshall_AllPairsShortestPath {
   final static int INF = 99999;
-  static void floydWarshall(int graph[][], int V) {
+  public static void floydWarshall(int graph[][], int V) {
     for (int k = 0; k < V; k++) {
       for (int i = 0; i < V; i++) {
         for (int j = 0; j < V; j++) {
@@ -39,7 +39,7 @@ public class FloydWarshall_AllPairsShortestPath {
   public static void main (String[] args)
   {
         /* Let us create the following weighted graph
-           10
+             10
         (0)------->(3)
         |         /|\
         5 |          |

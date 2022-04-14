@@ -1,10 +1,13 @@
 package com.mali.ds.graph;
 
+import com.mali.ds.algorithms.WeightedGraph;
+
 /*
 https://leetcode.com/problems/path-with-maximum-probability
 Medium
  */
 public class PathWithMaxProbability {
+  // todo
   public double maxProbability(int n, int[][] edges, double[] succProb, int start, int end) {
     WeightedGraph graph = new WeightedGraph(n, succProb.length);
     for (int i = 0; i < edges.length; i++) {
