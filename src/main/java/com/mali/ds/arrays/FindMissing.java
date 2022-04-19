@@ -1,6 +1,7 @@
 package com.mali.ds.arrays;
 
-/* https://practice.geeksforgeeks.org/problems/smallest-positive-missing-number3051/1/?track=dsa-workshop-1-arrays&batchId=308# */
+/* https://www.geeksforgeeks.org/find-the-smallest-positive-number-missing-from-an-unsorted-array/
+* hard */
 public class FindMissing {
 
   static int findMissing(int arr[], int size) {

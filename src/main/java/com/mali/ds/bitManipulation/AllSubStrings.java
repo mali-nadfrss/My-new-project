@@ -1,9 +1,6 @@
 package com.mali.ds.bitManipulation;
 
-import com.mali.designPattern.proxy.InternetConnection;
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class AllSubStrings {
@@ -24,7 +21,6 @@ public class AllSubStrings {
                 list.add(str.toString());
                 System.out.println(str);
             }
-
         }
         System.out.println(list);
     }

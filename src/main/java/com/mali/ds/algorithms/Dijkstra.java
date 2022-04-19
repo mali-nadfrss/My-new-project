@@ -7,7 +7,8 @@ import java.util.Arrays;
 public class Dijkstra {
   // works only for positive integers
   // finds shortest distance to each node from a particular node ( 1 to n)
-  // if we want find shortest distance to every node from every node( n to n) then use bellman ford
+  // if we want find shortest distance to every node from every node( n to n) then use flyod warshall
+  // use bellman ford for negative paths
   // algo
   static int INF = 100000;
 

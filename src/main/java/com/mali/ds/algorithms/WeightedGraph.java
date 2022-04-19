@@ -1,5 +1,6 @@
 package com.mali.ds.algorithms;
 
+/* bellmanFord */
 public class WeightedGraph {
   public class Edge {
     public int src, dest;
@@ -23,6 +24,7 @@ public class WeightedGraph {
     }
   }
 
+  /* bellmanFord */
   void bellmanFord(WeightedGraph graph, int src) {
     int V = graph.V;
     int E = graph.E;
@@ -36,6 +38,7 @@ public class WeightedGraph {
         int u = graph.edge[j].src;
         int v = graph.edge[j].dest;
         double weight = graph.edge[j].weight;
+        /* bellmanFord */
         if (dist[u] != Integer.MAX_VALUE && dist[u] + weight < dist[v]) {
           dist[v] = (int) (dist[u] + weight);
         }

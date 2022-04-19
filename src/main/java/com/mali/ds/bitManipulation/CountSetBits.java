@@ -14,9 +14,7 @@ public class CountSetBits {
         System.out.println(ans);
         int ans1 = 0;
         while (n > 0) {
-            if(n%2 != 0 ){
-                ans1++;
-            }
+            ans1++;
             n = n / 2;
         }
         System.out.println(ans1);

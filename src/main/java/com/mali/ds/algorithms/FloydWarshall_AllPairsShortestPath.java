@@ -1,4 +1,4 @@
-package com.mali.ds.graph;
+package com.mali.ds.algorithms;
 
 /*
 https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/

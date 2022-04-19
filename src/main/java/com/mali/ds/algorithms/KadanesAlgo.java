@@ -1,6 +1,4 @@
-package com.mali.ds.arrays;
-
-import java.util.Arrays;
+package com.mali.ds.algorithms;
 
 /* https://practice.geeksforgeeks.org/problems/kadanes-algorithm-1587115620/1/?track=dsa-workshop-1-arrays&batchId=308 */
 public class KadanesAlgo {

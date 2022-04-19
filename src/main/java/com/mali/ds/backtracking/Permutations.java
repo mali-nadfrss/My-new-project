@@ -3,11 +3,13 @@ package com.mali.ds.backtracking;
 import java.util.ArrayList;
 import java.util.List;
 
+/* https://leetcode.com/problems/permutations-ii/
+ * medium */
 public class Permutations {
 
   public static List<List<Integer>> permute(int[] nums) {
     List<List<Integer>> ans = new ArrayList<>();
-    backTracking(ans, nums, 0);
+     backTracking(ans, nums, 0);
     return ans;
   }
 
@@ -38,7 +40,7 @@ public class Permutations {
   }
 
   public static void main(String[] args) {
-    int[] nums = {0, 1, 2};
+    int[] nums = {1, 2, 3};
     System.out.println(permute(nums));
   }
 }

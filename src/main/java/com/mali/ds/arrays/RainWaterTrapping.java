@@ -1,6 +1,7 @@
 package com.mali.ds.arrays;
 
-/* https://practice.geeksforgeeks.org/problems/trapping-rain-water-1587115621/1/?track=dsa-workshop-1-arrays&batchId=308 */
+/* https://leetcode.com/problems/trapping-rain-water/
+* hard */
 public class RainWaterTrapping {
 
     // function to find the trapped water in between buildings

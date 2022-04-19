@@ -1,6 +1,7 @@
 package com.mali.ds.arrays;
 
-/* https://practice.geeksforgeeks.org/problems/rearrange-an-array-with-o1-extra-space3142/1/?track=dsa-workshop-1-arrays&batchId=308# */
+/* https://www.geeksforgeeks.org/rearrange-given-array-place/
+* hard */
 public class ReArrange {
 
     static void arrange(long arr[], int n) {

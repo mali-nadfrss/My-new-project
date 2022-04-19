@@ -24,13 +24,12 @@ public class Subsets {
       }
       tempList.add(nums[i]);
       backTrack(ans, tempList, nums, i + 1);
-      int len = tempList.size() - 1;
       tempList.remove(tempList.size() - 1);
     }
   }
 
   public static void main(String[] args) {
-    int[] nums = {1, 2, 2};
+    int[] nums = {1, 2, 3,4};
     System.out.println(subsets(nums));
   }
 }
