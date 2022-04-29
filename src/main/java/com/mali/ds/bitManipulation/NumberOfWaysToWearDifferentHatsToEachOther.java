@@ -1,4 +1,4 @@
-package com.mali.ds.bitMasking;
+package com.mali.ds.bitManipulation;
 
 import java.util.List;
 
@@ -8,9 +8,7 @@ Hard
  */
 public class NumberOfWaysToWearDifferentHatsToEachOther {
 
-    public static int numberWays(List<List<Integer>> hats) {
-        
-
-        return 0;
-    }
+  public static int numberWays(List<List<Integer>> hats) {
+    return 0;
+  }
 }

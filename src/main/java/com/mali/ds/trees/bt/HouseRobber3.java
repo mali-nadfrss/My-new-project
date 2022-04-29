@@ -2,6 +2,7 @@ package com.mali.ds.trees.bt;
 
 import com.mali.ds.trees.bst.Node;
 
+import java.util.Arrays;
 import java.util.Map;
 
 /*
@@ -48,7 +49,6 @@ public class HouseRobber3 {
     root.left.left = new Node(1);
     root.left.right = new Node(3);
     root.right.right = new Node(1);
-    System.out.println(robSub(root));
+    System.out.println(Arrays.toString(robSub(root)));
   }
-
 }

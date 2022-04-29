@@ -2,7 +2,10 @@ package com.mali.ds.trees.bt;
 
 import com.mali.ds.trees.bst.Node;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Map;
+import java.util.Queue;
+import java.util.TreeMap;
 
 public class TopView {
 
@@ -46,14 +49,14 @@ public class TopView {
   // Driver Program to test above functions
   public static void main(String[] args) {
     /* Create following Binary Tree
-        1
-    / \
-    2 3
+      1
+    /  \
+    2   3
     \
-        4
+      4
         \
-        5
-        \
+         5
+          \
             6*/
     Node tree = new Node(1);
     tree.left = new Node(2);
