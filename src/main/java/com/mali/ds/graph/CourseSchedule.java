@@ -3,7 +3,6 @@ package com.mali.ds.graph;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
 
 /* https://leetcode.com/problems/course-schedule/
  * medium */

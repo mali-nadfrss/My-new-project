@@ -29,7 +29,7 @@ public class BST2MinHeap {
         if (n == null){
             return null;
         }
-        n.data = (int) iterator.next();
+        n.data = iterator.next();
         preOrder(n.left, iterator);
         preOrder(n.right, iterator);
         return n;

@@ -7,7 +7,8 @@ import java.util.Arrays;
 public class Dijkstra {
   // works only for positive integers
   // finds shortest distance to each node from a particular node ( 1 to n)
-  // if we want find shortest distance to every node from every node( n to n) then use flyod warshall
+  // if we want find shortest distance to every node from every node( n to n) then use flyod
+  // warshall
   // use bellman ford for negative paths
   // algo
   static int INF = 100000;
@@ -15,16 +16,16 @@ public class Dijkstra {
   static void dijkstraShortestPath(int[][] graph, int n, int source) {
     boolean[] visitedNode = new boolean[n];
     int[] dist = new int[n];
-  Arrays.fill(dist, INF);
+    Arrays.fill(dist, INF);
     dist[source] = 0;
 
-    for (int i = 0; i < graph.length; i++) {
+    for (int i = 0; i < n-1; i++) {
       int vertex = minDistanceVertex(dist, source, visitedNode);
       for (int j = 0; j < graph.length; j++) {
         if (!visitedNode[i]
             && graph[vertex][j] != 0
-            && dist[i] < INF
-            && dist[vertex] + graph[vertex][j] < dist[i]) {
+                && dist[vertex] != Integer.MAX_VALUE
+            && dist[vertex] + graph[vertex][j] < dist[j]) {
           dist[j] = dist[vertex] + graph[vertex][j];
         }
       }
