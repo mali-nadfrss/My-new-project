@@ -14,12 +14,12 @@ public class ShipPackages {
       }
       total = total + weights[i];
     }
-    while ( max < total) {
+    while (max < total) {
       int mid = max + (total - max) / 2;
       if (cal(weights, mid, days)) {
         total = mid;
       } else {
-        max  = mid + 1;
+        max = mid + 1;
       }
     }
     return max;
@@ -28,10 +28,10 @@ public class ShipPackages {
   static boolean cal(int[] weights, int capacity, int days) {
     int total = 0;
     int actualDays = 1;
-    for (int i = 0; i < weights.length; i++) {
-      total = total + weights[i];
+    for (int weight : weights) {
+      total = total + weight;
       if (total > capacity) {
-        total = weights[i];
+        total = weight;
         actualDays = actualDays + 1;
       }
     }

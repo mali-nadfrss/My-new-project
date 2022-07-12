@@ -1,6 +1,7 @@
 package com.mali.ds.stack;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Stack;
 
 /* https://leetcode.com/problems/next-greater-element-ii/
  * medium
@@ -10,7 +11,6 @@ public class NextGreaterElementII {
   /* Monotonic stack --> strictly increasing/decreasing stack*/
   public static int[] nextGreaterElements(int[] nums) {
     Stack<Integer> stack = new Stack<>();
-    Map<Integer, List<Integer>> map = new HashMap<>();
     int[] ans = new int[nums.length];
     int n = nums.length;
 
