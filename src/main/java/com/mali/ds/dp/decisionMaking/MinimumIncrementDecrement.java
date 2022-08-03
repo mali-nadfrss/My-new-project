@@ -1,4 +1,4 @@
-package com.mali.ds.searchNsort;
+package com.mali.ds.dp.decisionMaking;
 
 
 /* https://www.geeksforgeeks.org/minimum-increment-or-decrement-operations-required-to-make-the-array-sorted/*/

@@ -102,10 +102,10 @@ public class MergeTwoSortedArrays {
   }
 
   public static void main(String[] args) {
-    int[] nums1 = {0};
-    int m = 0;
-    int[] nums2 = {1};
-    int n = 1;
+    int[] nums1 = {2, 4, 6, 0, 0, 0};
+    int m = 3;
+    int[] nums2 = {1, 3, 5};
+    int n = 3;
     merge(nums1, m, nums2, n);
     mergeSortedArraysNaive();
     mergeGapTechnic();
@@ -121,6 +121,7 @@ public class MergeTwoSortedArrays {
       nums1 = nums2;
     }
 
+    // fill largest of 2 numbers from back
     for (int i = 0; i < m; i++) {
       if (i < n) {
         if (nums1[i] > nums2[j]) {

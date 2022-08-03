@@ -1,5 +1,6 @@
 package com.mali.ds.heap;
 
+import java.util.LinkedList;
 import java.util.PriorityQueue;
 
 /* https://leetcode.com/problems/k-closest-points-to-origin/ */

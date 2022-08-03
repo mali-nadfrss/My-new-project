@@ -5,6 +5,7 @@ import java.util.List;
 
 public class AllSubStrings {
 
+
     static void subString(String s){
         int n = (int) Math.pow(2,s.length());
         List<String> list  = new ArrayList<>();
