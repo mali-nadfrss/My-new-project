@@ -1,12 +1,10 @@
 package com.mali.ds.bitManipulation;
 
-import com.mali.designPattern.proxy.InternetConnection;
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class AllSubStrings {
+
 
     static void subString(String s){
         int n = (int) Math.pow(2,s.length());
@@ -24,7 +22,6 @@ public class AllSubStrings {
                 list.add(str.toString());
                 System.out.println(str);
             }
-
         }
         System.out.println(list);
     }

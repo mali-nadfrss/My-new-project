@@ -1,5 +1,7 @@
 package com.mali.ds.stack;
 
+/* https://www.geeksforgeeks.org/find-the-maximum-of-minimums-for-every-window-size-in-a-given-array/
+* expert */
 public class MaxOfMinInEveryWindow {
 
     static int[] maxOfMin(int[] arr, int N) {

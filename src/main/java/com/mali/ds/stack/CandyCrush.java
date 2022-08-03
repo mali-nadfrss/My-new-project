@@ -8,6 +8,7 @@ import java.util.Stack;
  * */
 public class CandyCrush {
 
+    //use pair below implementation is not correct
     public static String reduced_String(int k, String s) {
         // Your code goes here
         Stack<Character> ans = new Stack<>();

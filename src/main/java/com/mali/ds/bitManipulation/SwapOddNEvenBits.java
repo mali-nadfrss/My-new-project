@@ -1,6 +1,6 @@
 package com.mali.ds.bitManipulation;
 
-/* https://practice.geeksforgeeks.org/problems/swap-all-odd-and-even-bits-1587115621/1/?track=dsa-workshop-1-bit-magic&batchId=308 */
+/* https://www.geeksforgeeks.org/swap-all-odd-and-even-bits/ */
 public class SwapOddNEvenBits {
 
     public static int swapBits(int n) {

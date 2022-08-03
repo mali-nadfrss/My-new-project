@@ -5,6 +5,8 @@ import com.mali.ds.trees.bst.Node;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
+/* https://leetcode.com/problems/kth-ancestor-of-a-tree-node/
+* hard */
 public class KthAncestor {
 
   public static int kthAncestor(Node root, int n, int k, int node) {
@@ -19,11 +21,11 @@ public class KthAncestor {
     while (!queue.isEmpty()) {
       Node current = queue.poll();
       arr[i] = current.data;
-      if (current.left != null) queue.add(current.left);
-      if (current.right != null) queue.add(current.right);
       if (current.data == node) {
         break;
       }
+      if (current.left != null) queue.add(current.left);
+      if (current.right != null) queue.add(current.right);
       i++;
     }
     while (k > 0) {
@@ -43,6 +45,6 @@ public class KthAncestor {
     int node = 5;
 
     // print kth ancestor of given node
-    System.out.println(kthAncestor(root,5,k,node));
+    System.out.println(kthAncestor(root, 5, k, node));
   }
 }

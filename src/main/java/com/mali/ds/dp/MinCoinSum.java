@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class MinCoinSum {
 
     static int minCoins(int[] change, int amount) {
+
         int l = change.length;
         int[][] ans = new int[l][amount+1];
         Arrays.sort(change);

@@ -20,7 +20,7 @@ public class ZeroSumSubArray {
             sum = sum + arr[i];
             if (map.containsKey(sum)) {
                 //if map already contains that sum ..
-                // it means sub array sum at this index is zero add taht many times to ans
+                // it means sub array sum at this index is zero add that many times to ans
                 ans = ans + map.get(sum);
                 //increment the number of times we have encountered the sum
                 map.put(sum, map.get(sum) + 1);

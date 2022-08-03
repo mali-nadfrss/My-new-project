@@ -17,6 +17,10 @@ public class BitTactics {
 
     public static int checkBitAtPosition(int num, int position) {
         position = 1 << position;
+        System.out.println(1 << 1);//
+        System.out.println(2 << 1); // 2 is 10 .. shift it by 1 position ==> 100 ==> 4
+        System.out.println(3 << 1);// 3 is 11.. shift its position by 1 ==> 110
+        System.out.println("hi"+ ~3);// shift its position by 2 ==> 100
         num = num & position;
         return num;
     }
@@ -35,7 +39,9 @@ public class BitTactics {
     public static int toggleBitAtPosition(int num, int position) {
         position = 1 << position;
         position = ~position;
-        num = num ^ position;
+        // >>> shifts bits to right side and excessive bits are discarded
+        // a+b = a|b + a&b;
+        num = num ^ position; // XOR --> boths 1 or both 0s gives 0 .. anyone is 1 gives 1
         return num;
     }
 

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/* https://leetcode.com/problems/combination-sum/
+* medium */
 public class CombinationSum {
   public static List<List<Integer>> combinationSum(int[] candidates, int target) {
     Arrays.sort(candidates);

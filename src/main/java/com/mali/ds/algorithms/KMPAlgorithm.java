@@ -29,12 +29,12 @@ public class KMPAlgorithm {
   }
 
   // lps :longest proper prefix to a sufix
-  static int[] computeLPS(String pattern, int M, int[] lps) {
+  static int[] computeLPS(String pattern, int m, int[] lps) {
     int len = 0;
     int i = 1;
     lps[0] = 0;
 
-    while (i < M) {
+    while (i < m) {
       if (pattern.charAt(i) == pattern.charAt(len)) {
         lps[i++] = ++len;
       } else {

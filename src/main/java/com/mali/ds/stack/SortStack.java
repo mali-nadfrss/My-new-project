@@ -4,6 +4,21 @@ import java.util.Stack;
 
 public class SortStack {
 
+    public static Stack<Integer> sortUsingRecursion(Stack<Integer> s, Stack<Integer> ans) {
+        if (s.isEmpty()){
+            return ans;
+        }
+        int i = s.pop();
+        if (ans.isEmpty() || i > ans.peek()){
+            ans.push(i);
+        }
+         else {
+            
+        }
+         return sortUsingRecursion(s, ans);
+    }
+
+
     public static Stack<Integer> sort(Stack<Integer> s) {
         //add code here.
         Stack<Integer> ans = new Stack<>();

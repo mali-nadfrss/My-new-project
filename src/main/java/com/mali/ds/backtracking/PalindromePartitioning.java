@@ -25,8 +25,10 @@ public class PalindromePartitioning {
       if (isPalindrome(temp)) {
         tempList.add(temp);
         backTracking(ans, tempList, s, i + 1);
-        if (!tempList.isEmpty()) System.out.println("remove: " + tempList.get(tempList.size()-1));
-        tempList.remove(tempList.size() - 1);
+        if (!tempList.isEmpty()) {
+          System.out.println("remove: " + tempList.get(tempList.size() - 1));
+          tempList.remove(tempList.size() - 1);
+        }
       }
     }
   }
@@ -42,6 +44,6 @@ public class PalindromePartitioning {
   }
 
   public static void main(String[] args) {
-    System.out.println(partition("aba"));
+    System.out.println(partition("abab"));
   }
 }
