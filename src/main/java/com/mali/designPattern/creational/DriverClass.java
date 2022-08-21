@@ -2,9 +2,7 @@ package com.mali.designPattern.creational;
 
 import com.mali.designPattern.creational.Factory.ShapeFactory;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class DriverClass {
     public static void main(String[] args) throws Exception {
@@ -30,6 +28,7 @@ public class DriverClass {
             Collections.rotate(mylist, -2);
 
             System.out.println(Math.round(2.5+Math.random()));
+        Set<Integer> set = new HashSet<>();
 
             double  a = 130.09;
             byte b = (byte)a;

@@ -8,11 +8,11 @@ public class DesignCircularDeque {
   Node front;
   Node last;
 
-  class Node {
+   static class Node {
 
     int value;
-    Node next;
-    Node prev;
+    public Node next;
+    public Node prev;
 
     Node(int value) {
       this.value = value;
@@ -84,8 +84,7 @@ public class DesignCircularDeque {
       last = null;
       front = null;
     } else {
-      Node n = last.next;
-      last = n;
+      last = last.next;
       last.prev = null;
     }
     curSize -= 1;
