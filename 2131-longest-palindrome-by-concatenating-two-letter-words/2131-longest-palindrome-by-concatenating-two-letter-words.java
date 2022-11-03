@@ -18,13 +18,11 @@ class Solution {
              if(isPalin(s)){
                  if(map.get(s) % 2  == 0)
                 ans +=  s.length()*map.get(s); 
-                 else if(map.get(s) > 1 ){
+                 else {
                      ans +=  s.length()*(map.get(s)-1); 
                      lp = Math.max(lp, s.length());
                  }
-                 else
-                     lp = Math.max(lp, s.length()*map.get(s));
-                 
+               
              }
             else if(palins.get(r) == null && map.get(r) != null){
                 palins.put(s, Math.min(map.get(s), map.get(r)));
