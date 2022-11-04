@@ -2,19 +2,30 @@ class Solution {
 
     public String reverseParentheses(String s) {
         int len = s.length();
-        int begin = 0;
-        int end = 0;
-
-        for (int i = 0; i < len; i++) {
-            if (s.charAt(i) == '(') begin = i;
-            if (s.charAt(i) == ')') {
-                end = i;
-                StringBuilder sb = new StringBuilder();
-                return reverseParentheses(s.substring(0, begin) 
-                                          + sb.append(s, begin + 1, end).reverse() 
-                                          + s.substring(end + 1, len));
+        Stack<Integer> stack = new Stack<>();
+        int[] pair = new int[len];
+        
+        for(int i = 0 ; i < len ; i++){
+            if(s.charAt(i) == '('){
+                stack.push(i);
+            } 
+            if(s.charAt(i) == ')'){
+                pair[i] = stack.pop();
+                pair[pair[i]] = i;
             }
         }
-        return s;
+        
+        StringBuilder sb = new StringBuilder();
+        
+        for(int i = 0, d= 1 ; i < len ; i+=d){
+            if(s.charAt(i) == '(' || s.charAt(i) == ')'){
+                d = -d;
+                i = pair[i];
+            } else{
+                sb.append(s.charAt(i));
+            }
+        }
+        
+        return sb.toString();
     }
 }
