@@ -1,35 +1,32 @@
 class Solution {
-    public int subarrayLCM(int[] nums, int k) {
-        int ans = 0;
 
-    int start = 0;
-    int prev = -1;
+    int gcd(int a, int b)
+{
+    if (a == 0)
+        return b;
+    return gcd(b % a, a);
+}
+ 
+// method to return LCM of two numbers
+ int LCM(int a, int b)
+{
+    return (a / gcd(a, b)) * b;
+}
+
+public int subarrayLCM(int[] nums, int k) {
+    int ans = 0;
     for (int i = 0; i < nums.length; i++) {
-
-      if (nums[i] == k) ans++;
-      if (k % nums[i] == 0) {
-        if (prev != -1 &&lcm(nums[i], prev) == k) {
-          ans += i - start;
+        int currLCM = nums[i];
+        if(currLCM == k) // if element is equal to k, increment answer
+            ans++;
+        for (int j = i + 1; j < nums.length; j++) {
+            if(nums[j] > k) // if nums[j] > k lcm can never be equal to k for this subarray
+                break;
+            currLCM = LCM(nums[j], currLCM);
+            if (currLCM == k)
+                ans++;
         }
-        prev = nums[i];
-      } else {
-        start = i + 1;
-      }
     }
     return ans;
-        
-    }
-    
-    
-    int gcd(int a, int b){
-        
-        if(a == 0) return b;
-        return gcd(b%a,a);
-        
-    }
-    
-    int lcm(int a, int b){
-         return (a / gcd(a, b)) * b;
-        
-    }
+}
 }
