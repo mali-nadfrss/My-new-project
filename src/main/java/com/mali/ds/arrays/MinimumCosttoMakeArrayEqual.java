@@ -4,23 +4,46 @@ package com.mali.ds.arrays;
 public class MinimumCosttoMakeArrayEqual {
 
   public static long minCost(int[] nums, int[] cost) {
+    int start = 0;
+    int end = 1000001;
+    long mc = 0;
+    while (start < end) {
 
-    long ans = Long.MAX_VALUE;
-
-    for (int i = 0; i < nums.length; i++) {
-
-      long cur = 0;
-
-      for (int j = 0; j < nums.length; j++) {
-        cur += (long) Math.abs(nums[i] - nums[j]) * cost[j];
+      int mid = (start + end) / 2;
+      mc = calCost(nums, cost, mid);
+      long mc1 = calCost(nums, cost, mid - 1);
+      long mc2 = calCost(nums, cost, mid + 1);
+      if (mc <= mc1 && mc <= mc2) {
+        return mc;
+      } else if (mc1 < mc) {
+        end = mid - 1;
+      } else {
+        start = mid + 1;
       }
-
-      ans = Math.min(cur, ans);
     }
-    return ans;
+
+    return mc;
+  }
+
+  static long calCost(int[] nums, int[] costs, int mid) {
+    long cost = 0;
+    for (int j = 0; j < nums.length; j++) {
+      cost += (long) Math.abs(nums[j] - mid) * costs[j];
+    }
+    return cost;
   }
 
   public static void main(String[] args) {
-    System.out.println(minCost(new int[] {1, 3, 5, 2}, new int[] {2, 3, 1, 14}));
+
+    int[] nums = {
+      735103, 366367, 132236, 133334, 808160, 113001, 49051, 735598, 686615, 665317, 999793, 426087,
+      587000, 649989, 509946, 743518
+    };
+
+    int[] costs = {
+      724182, 447415, 723725, 902336, 600863, 287644, 13836, 665183, 448859, 917248, 397790, 898215,
+      790754, 320604, 468575, 825614
+    };
+    System.out.println(minCost(nums, costs));
   }
 }

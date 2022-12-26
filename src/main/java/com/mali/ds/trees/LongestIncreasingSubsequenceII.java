@@ -15,14 +15,15 @@ public class LongestIncreasingSubsequenceII {
     return 1;
   }
 
-  void segmentInsert(int[] nums, int[] st, int low, int high, int pos, int k) {
-    if (low == high) {
-      st[low] = nums[low];
+  int segmentInsert(int[] nums, int[] st, int low, int high, int pos, int k) {
+
+    if(low == high){
+      st[pos] = nums[low];
     }
-    int mid = (low + high) / 2;
-    segmentInsert(nums, st, low, mid, 2 * pos + 1, k);
-    segmentInsert(nums, st, mid + 1, high, 2 * pos + 2, k);
-    st[pos] = Math.max(st[2 * pos + 1], st[2 * pos + 2]);
+
+    int mid = low+(high-low)/2;
+    st[pos] = segmentInsert(nums, st, low, mid, 2*pos+1, k)+1;
+return st[pos];
   }
 
   int segmentSearch(int[] st, int low, int high, int pos, int k, int qlow, int qhigh) {
