@@ -11,6 +11,7 @@ public class MinimumFuelCosttoReporttotheCapital {
 
     int len = roads.length;
     Map<Integer, List<Integer>> map = new HashMap<>();
+    Map<Integer, Integer> inDegree = new HashMap<>();
     for (int[] i : roads) {
       if (map.get(i[0]) != null) {
         List<Integer> list = new ArrayList<>();
@@ -27,6 +28,8 @@ public class MinimumFuelCosttoReporttotheCapital {
       } else {
         map.get(i[1]).add(i[0]);
       }
+      inDegree.put(i[0], inDegree.getOrDefault(i[0], 0)+1);
+      inDegree.put(i[1], inDegree.getOrDefault(i[1], 0)+1);
     }
     boolean[] visited = new boolean[len];
     visited[0] = true;
