@@ -6,6 +6,7 @@ package com.mali.ds.dp.distinctWays;
  * */
 public class NumberOfLongestIncreasingSubsequence {
 
+  //use dp .. 2 for loops standard LIS solution
   public static int findNumberOfLIS(int[] nums) {
     int[] count = new int[nums.length + 1];
     recursion(nums, 0, Integer.MIN_VALUE, count, 0);

@@ -1,6 +1,9 @@
 package com.mali.ds.algorithms;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 /* https://www.youtube.com/watch?v=XB4MIexjvY0&ab_channel=AbdulBari
  * algorithm */
@@ -19,12 +22,12 @@ public class Dijkstra {
     Arrays.fill(dist, INF);
     dist[source] = 0;
 
-    for (int i = 0; i < n-1; i++) {
+    for (int i = 0; i < n - 1; i++) {
       int vertex = minDistanceVertex(dist, source, visitedNode);
       for (int j = 0; j < graph.length; j++) {
         if (!visitedNode[i]
             && graph[vertex][j] != 0
-                && dist[vertex] != Integer.MAX_VALUE
+            && dist[vertex] != Integer.MAX_VALUE
             && dist[vertex] + graph[vertex][j] < dist[j]) {
           dist[j] = dist[vertex] + graph[vertex][j];
         }
@@ -46,6 +49,35 @@ public class Dijkstra {
     }
     visited[ans] = true;
     return ans;
+  }
+
+  // using pq
+
+  static void dijkstra(int V, int source, ArrayList<ArrayList<ArrayList<Integer>>> adj) {
+
+    PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(o -> o[0]));
+    pq.add(new int[] {source, 0});
+    int[] dist = new int[V];
+    Arrays.fill(dist, 100000);
+
+    dist[source] = 0;
+    while (!pq.isEmpty()) {
+      int node = pq.peek()[0];
+      int distance = pq.poll()[1];
+
+      for (ArrayList<Integer> list : adj.get(node)) {
+        int adjDist = list.get(1);
+        int adjNode = list.get(0);
+        if (dist[adjNode] > distance + adjDist) {
+          dist[adjNode] = distance + adjDist;
+          pq.add(new int[] {adjNode, dist[adjNode]});
+        }
+      }
+
+      for (int i = 0; i < V; i++) {
+        System.out.println(dist[i]);
+      }
+    }
   }
 
   public static void main(String[] args) {

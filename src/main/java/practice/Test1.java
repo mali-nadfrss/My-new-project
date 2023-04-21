@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 public class Test1 {
 
+
+
+
   // array[1,2,3,4] --> [3,4,1,2] --> 12341234 n 2n
   // arr, k%n
   // 4321 4123
@@ -79,17 +82,9 @@ public class Test1 {
     return new int[] {a, b};
   }
 
-
-
-
-
   public static void main(String[] args) {
-  int[] arr1 = new int[]{1, 3, 15, 11, 2, 234};
-  int[] arr2 = new int[]{23, 127, 235, 19, 8};
-    System.out.println(Integer.toBinaryString(25));
 
-    StringBuilder s = new StringBuilder("as");
-    s = s.reverse();
 
   }
+
 }
