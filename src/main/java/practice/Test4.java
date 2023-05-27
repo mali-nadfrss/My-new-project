@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Test4 {
 
+  int a ;
   // Given a string you need to print the size of the longest possible substring that has exactly K
   // unique characters. If there is no possible substring then print -1.
 
@@ -53,7 +54,20 @@ public class Test4 {
   }
 
   public static void main(String[] args) {
+
+    double x, y,z;
+    x=6.0/0;
+    y=0/7.0;
+    z=0/0.0;
+    System.out.println(x);
+    System.out.println(y);
+    System.out.println(z);
+
+    int[] arr = {1, 2,3};
+    int[] arr1 = {1, 2,3};
+    System.out.println(arr==arr1);
     Test4 t = new Test4();
+    System.out.println(t.a);
     System.out.println(t.longestKSubstring("aabacbebebe", 3));
     System.out.println(t.longestKSubstring("abbbbcacdeeef", 2));
     System.out.println(t.longestKSubstring("aaaa", 2));

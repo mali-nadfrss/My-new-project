@@ -20,7 +20,9 @@ public interface Car {
 
 class Tata implements Car {
 
-
+final public void hi(){
+    System.out.println("tata");
+}
 
     String j = "10";
     int f = Integer.parseInt(j);
@@ -38,6 +40,9 @@ class Tata implements Car {
 
 class Hyudndai implements Car{
 
+    public void hi(){
+        System.out.println("tata");
+    }
     public void getCar(){
         System.out.println("this is from Hyudndai");
     }
