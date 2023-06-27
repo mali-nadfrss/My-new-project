@@ -11,12 +11,15 @@ public class PrintZeroEvenOdd {
   }
 
   Semaphore zero = new Semaphore(1);
+
+  // imp : semaphore(0) -> initially it will be locked unless someone releases it.
   Semaphore odd = new Semaphore(0);
   Semaphore even = new Semaphore(0);
 
   // printNumber.accept(x) outputs "x", where x is an integer.
   public void zero() throws InterruptedException {
     boolean bol = false;
+
     for (int i = 0; i < n; i++) {
       zero.acquire();
       System.out.println(0);

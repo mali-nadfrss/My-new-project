@@ -19,39 +19,36 @@ public class NumberofWaystoArriveatDestination {
     long[] dist = new long[n];
     Arrays.fill(dist, Long.MAX_VALUE);
     dist[0] = 0l;
-    int[] path = new int[n];
+    long[] path = new long[n];
     path[0] = 1;
     PriorityQueue<long[]> q = new PriorityQueue<>(Comparator.comparingLong(o -> o[1]));
     // node, prev, dist
     q.add(new long[] {0, 0});
-    int ans = 0;
     int MOD = 1000000007;
     while (!q.isEmpty()) {
       long[] cur = q.poll();
       int u = (int) cur[0];
+      long d = cur[1];
       for (int[] road : graph[u]) {
         int v = road[0];
         int wt = road[1];
-        if (dist[v] >= dist[u] + wt) {
-          if(dist[v] == dist[u] + wt){
+        if (dist[v] >= d + wt) {
+          if (dist[v] == d + wt) {
             path[v] = path[v] + path[u] % MOD;
           } else {
             path[v] = path[u] % MOD;
             dist[v] = dist[u] + wt;
-            q.add(new long[]{v,dist[v] });
+            q.add(new long[] {v, dist[v]});
           }
         }
       }
     }
-    return path[n-1];
+    return (int) (path[n - 1] % MOD);
   }
 
   public static void main(String[] args) {
-    int n = 7;
-    int[][] roads = {
-      {0, 6, 7}, {0, 1, 2}, {1, 2, 3}, {1, 3, 3}, {6, 3, 3}, {3, 5, 1}, {6, 5, 1}, {2, 5, 1},
-      {0, 4, 5}, {4, 6, 2}
-    };
+    int n = 5;
+    int[][] roads = {{0, 1, 1}, {1, 2, 4}, {0, 4, 3}, {3, 2, 5}, {3, 4, 1}, {3, 0, 5}, {1, 3, 1}};
     countPaths(n, roads);
   }
 }

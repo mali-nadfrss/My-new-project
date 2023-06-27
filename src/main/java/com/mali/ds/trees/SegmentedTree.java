@@ -3,6 +3,18 @@ package com.mali.ds.trees;
 /* https://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/ */
 public class SegmentedTree {
 
+  void updateTree(int[] st, int val, int index, int low, int high, int pos) {
+
+    if (low == high) {
+      st[pos] += val;
+      return;
+    }
+
+    int mid = (low + high) / 2;
+    if (index <= mid) updateTree(st, val, index, low, mid, 2 * pos + 1);
+    else updateTree(st, val, index, mid + 1, high, 2 * pos + 2);
+    st[pos] = st[2 * pos + 1] + st[2 * pos + 2];
+  }
 
   void createTree(int[] nums, int[] st, int low, int high, int pos) {
     if (low == high) {
