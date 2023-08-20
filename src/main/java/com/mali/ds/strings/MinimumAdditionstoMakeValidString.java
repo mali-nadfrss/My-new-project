@@ -7,13 +7,13 @@ public class MinimumAdditionstoMakeValidString {
 
     int ans = 0;
     int i = 0;
-    for (; i < word.length() - 2; ) {
+    while (i < word.length() - 2) {
 
       if (word.charAt(i) == 'a') {
         if (word.charAt(i + 1) == 'b') {
           if (word.charAt(i + 2) == 'c') {
             i += 3;
-          } else  {
+          } else {
             ans++;
             i += 2;
           }

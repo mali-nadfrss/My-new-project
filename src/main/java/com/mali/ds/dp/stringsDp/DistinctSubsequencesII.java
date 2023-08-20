@@ -1,8 +1,5 @@
 package com.mali.ds.dp.stringsDp;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /* https://leetcode.com/problems/distinct-subsequences-ii/description/ */
 public class DistinctSubsequencesII {
 
@@ -22,7 +19,7 @@ public class DistinctSubsequencesII {
         count += dp[j];
         count %= M;
       }
-      dp[k] =count+1;
+      dp[k] = count + 1;
     }
     for (int i = 0; i < 26; i++) {
       ans += dp[i];

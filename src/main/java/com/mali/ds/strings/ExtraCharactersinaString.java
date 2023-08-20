@@ -22,10 +22,10 @@ public class ExtraCharactersinaString {
     }
     if (dp[index] > 0) return dp[index];
     int cur = Integer.MAX_VALUE;
-    for (int i = index ; i < s.length(); i++) {
-      String str = s.substring(index, i+1);
+    for (int i = index; i < s.length(); i++) {
+      String str = s.substring(index, i + 1);
       if (set.contains(str)) {
-        cur = Math.min(recursion(set, s,   i+1, dp), cur);
+        cur = Math.min(recursion(set, s, i + 1, dp), cur);
       } else {
         cur = Math.min(cur, i - index + 1 + recursion(set, s, index + 1, dp));
       }

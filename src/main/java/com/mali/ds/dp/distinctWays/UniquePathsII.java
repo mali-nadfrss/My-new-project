@@ -9,6 +9,21 @@ public class UniquePathsII {
   public static int uniquePathsWithObstacles(int[][] obstacleGrid) {
     int m = obstacleGrid.length;
     int n = obstacleGrid[0].length;
+    int[] dp = new int[n + 1];
+    dp[n] = 1;
+    for (int i = m - 1; i >= 0; i--) {
+      int next = 0;
+      int[] temp = new int[n];
+      for (int j = n - 1; j >= 0; j--) {
+        if (obstacleGrid[i][j] == 1) {
+          next = temp[j] = 0;
+        } else next = temp[j] = dp[j] + next;
+      }
+      dp = temp;
+    }
+    StringBuilder s= new StringBuilder();
+    s.reverse();
+    System.out.println(dp[0]);
     return recursion(m - 1, n - 1, obstacleGrid, new Integer[m][n]);
   }
 

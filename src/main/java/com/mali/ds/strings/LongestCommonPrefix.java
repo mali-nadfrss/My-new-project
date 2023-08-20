@@ -1,13 +1,10 @@
 package com.mali.ds.strings;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LongestCommonPrefix {
-
-
 
   static class TrieNode {
     Map<Character, TrieNode> map;
@@ -21,7 +18,7 @@ public class LongestCommonPrefix {
 
   static void insert(TrieNode root, int index, String word) {
 
-    int[] i = new int[]{1,2,3};
+    int[] i = new int[] {1, 2, 3};
     Arrays.sort(i);
     if (index >= word.length()) {
       return;
