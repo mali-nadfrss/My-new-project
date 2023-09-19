@@ -50,10 +50,10 @@ public class PartitionToKEqualSumSubsets {
     }
     for (int i = 1; i < nums.length + 1; i++) {
       for (int j = 1; j < sum + 1; j++) {
-        if (nums[i-1] > j) {
+        if (nums[i - 1] > j) {
           dp[i][j] = dp[i - 1][j];
         } else {
-          dp[i][j] = dp[i - 1][j] + dp[i - 1][j - nums[i-1]];
+          dp[i][j] = dp[i - 1][j] + dp[i - 1][j - nums[i - 1]];
         }
       }
     }
@@ -66,7 +66,7 @@ public class PartitionToKEqualSumSubsets {
     dp[0][0] = true;
     for (int i = 1; i <= nums.length; i++) {
       for (int j = nums[i - 1]; j <= sum; j++) {
-        if (isAvailable[i-1]) {
+        if (isAvailable[i - 1]) {
           continue;
         }
         dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i - 1]];
@@ -76,7 +76,7 @@ public class PartitionToKEqualSumSubsets {
   }
 
   public static void main(String[] args) {
-    int[] nums = new int[] {4,3,2,3,5,2,1};
+    int[] nums = new int[] {4, 3, 2, 3, 5, 2, 1};
     System.out.println(canPartitionKSubsets(nums, 4));
     System.out.println(usingTabulation(nums, 4));
     System.out.println(isSumPossible(nums, 23, new boolean[7]));

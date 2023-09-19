@@ -21,8 +21,7 @@ public class UniquePathsII {
       }
       dp = temp;
     }
-    StringBuilder s= new StringBuilder();
-    s.reverse();
+
     System.out.println(dp[0]);
     return recursion(m - 1, n - 1, obstacleGrid, new Integer[m][n]);
   }
