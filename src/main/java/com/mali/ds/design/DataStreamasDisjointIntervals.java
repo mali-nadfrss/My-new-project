@@ -70,6 +70,7 @@ public class DataStreamasDisjointIntervals {
   }
 
   public static void main(String[] args) {
+
     DataStreamasDisjointIntervals obj = new DataStreamasDisjointIntervals();
     obj.addNum(6);
     System.out.println(Arrays.deepToString(obj.getIntervals()));
