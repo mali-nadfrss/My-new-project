@@ -8,8 +8,8 @@ public class AllSubStrings {
 
     static void subString(String s){
         int n = (int) Math.pow(2,s.length());
-        List<String> list  = new ArrayList<>();
 
+        List<String> list  = new ArrayList<>();
         for (int i = 1; i < n; i++) {
             StringBuilder str = new StringBuilder();
             for (int j = 0; j < s.length(); j++) {

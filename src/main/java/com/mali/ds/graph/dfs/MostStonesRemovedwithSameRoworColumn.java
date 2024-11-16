@@ -27,7 +27,7 @@ public class MostStonesRemovedwithSameRoworColumn {
   }
 
   public static void main(String[] args) {
-    int[][] days = {{0, 0}, {0, 1}, {1, 0}, {1, 2}, {2, 1}, {2, 2}};
+    int[][] days = {{0, 1}, {1, 0}, {1, 1}};
     System.out.println(removeStones(days));
   }
 }

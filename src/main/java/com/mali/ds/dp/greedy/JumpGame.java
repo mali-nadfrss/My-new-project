@@ -1,6 +1,7 @@
 package com.mali.ds.dp.greedy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,6 +11,19 @@ https://leetcode.com/problems/jump-game-iii/
  * Medium
  * */
 public class JumpGame {
+
+  public static int canJumpII(int[] nums) {
+    int len = nums.length;
+    int[] dp = new int[len];
+    Arrays.fill(dp, len);
+    for (int i = 0; i < len; i++) {
+      for (int j = i + 1; j <= i + nums[i] && j < len; j++) {
+        dp[j] = Math.min(dp[j], dp[i] + 1);
+      }
+    }
+
+    return dp[len - 1];
+  }
 
   /* https://leetcode.com/problems/jump-game-iii/ */
   public static boolean canReach(int[] arr, int start) {
@@ -85,7 +99,7 @@ public class JumpGame {
     int[] nums = {3, 2, 1, 0, 4};
     int[] nums1 = {2, 3, 1, 1, 4};
     System.out.println(canJump(nums));
-    System.out.println(canJump(nums1));
+    System.out.println(canJumpII(nums1));
 
     System.out.println(minJumps(nums1));
     int[] nums2 = {4, 2, 3, 0, 3, 1, 2};

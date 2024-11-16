@@ -8,6 +8,7 @@ import java.util.concurrent.Executors;
 public class CountdownLatchDemo {
 
   //cyclic barrier breaks when required number of threads reach a breaking point.
+  // countdown latch is like join .. it will wait till the latch count 0. it will not be reset again.
   static class Worker extends Thread {
     CountDownLatch latch;
 
@@ -29,11 +30,13 @@ public class CountdownLatchDemo {
     Worker w4 = new Worker(latch, "w4");
     Worker w3 = new Worker(latch, "w3");
     Worker w2 = new Worker(latch, "w2");
-    ExecutorService es = Executors.newFixedThreadPool(4);
+    Worker w5 = new Worker(latch, "w5");
+    ExecutorService es = Executors.newFixedThreadPool(5);
     es.submit(w4);
     es.submit(w2);
     es.submit(w3);
     es.submit(w1);
+    es.submit(w5);
 
     latch.await();
 

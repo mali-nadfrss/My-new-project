@@ -17,8 +17,7 @@ public class LemonadeChange {
         } else {
           return false;
         }
-      }
-      else if (bills[i] % 10 == 0) {
+      } else if (bills[i] % 10 == 0) {
         if (c5 > 0) {
           c5--;
           c10++;
